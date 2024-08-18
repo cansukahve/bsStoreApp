@@ -1,11 +1,8 @@
-﻿using Azure;
-using Microsoft.AspNetCore.Http;
+﻿using Entities.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using Nest;
-using System.Linq.Expressions;
-using WebAPI.Models;
-using WebAPI.Repositories;
+using Repositories.EFCore;
+
 
 namespace WebAPI.Controllers
 {
@@ -60,7 +57,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateOneBook([FromBody] Book book)
+        public IActionResult CreateOneBook([FromBody] Entities.Models.Book book)
         {
             try
             {
