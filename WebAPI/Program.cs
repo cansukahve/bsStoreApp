@@ -17,6 +17,7 @@ using WebAPI.Extensions;
 
         builder.Services.ConfigureSqlContext(builder.Configuration);
         builder.Services.ConfigureRepositoryManager();
+        builder.Services.ConfigureServiceManager();
 
        
 
