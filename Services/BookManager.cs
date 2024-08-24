@@ -17,15 +17,20 @@ namespace Services
             _manager = manager;
         }
 
-        public Book CrateOneBook(Book book)
+
+        public Book CreateOneBook(Book book)
         {
-            if(book is null) 
+            //throw new NotImplementedException();
+            if (book is null)
                 throw new ArgumentNullException(nameof(book));
 
             _manager.Book.CreateOneBook(book);
             _manager.Save();
             return book;
         }
+
+        
+
 
         public void DeleteOneBook(int id, bool trackChanges)
         {

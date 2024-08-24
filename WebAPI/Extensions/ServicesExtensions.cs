@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Repositories.Contracts;
 using Repositories.EFCore;
+using Services;
 using Services.Contract;
 using System.Runtime.CompilerServices;
 
@@ -16,6 +17,6 @@ namespace WebAPI.Extensions
             services.AddScoped<IRepositoryManager, RepositoryManager>();
 
         public static void ConfigureServiceManager(this IServiceCollection services) =>
-            services.AddScoped<IServiceManager, IServiceManager>();
+            services.AddScoped<IServiceManager,ServiceManager>();
     }
     }
