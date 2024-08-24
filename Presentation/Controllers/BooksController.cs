@@ -1,22 +1,25 @@
 ﻿using Entities.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using Repositories.Contracts;
-using Repositories.EFCore;
 using Services.Contract;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace WebAPI.Controllers
+namespace Presentation.Controllers
 {
-    [Route("api/[controller]")]
+
     [ApiController]
+    [Route("api/books")]
     public class BooksController : ControllerBase
     {
         private readonly IServiceManager _manager;
 
         public BooksController(IServiceManager manager)
         {
-           _manager = manager; 
+            _manager = manager;
         }
         [HttpGet]
         public IActionResult GetAllBooks()
@@ -65,7 +68,7 @@ namespace WebAPI.Controllers
                     return BadRequest(); //400
 
                 _manager.BookService.CreateOneBook(book);
-               
+
 
                 return StatusCode(201, book);
             }
@@ -87,7 +90,7 @@ namespace WebAPI.Controllers
                     return BadRequest(); //400
 
                 _manager.BookService.UpdateOneBook(id, book, true);
-                 return NoContent(); //204
+                return NoContent(); //204
 
             }
             catch (Exception ex)
@@ -123,7 +126,7 @@ namespace WebAPI.Controllers
                 var entity = _manager
                     .BookService
                     .GetOneBookById(id, true);
-                   
+
 
                 if (entity is null)
                     return NotFound(); //404
@@ -140,3 +143,4 @@ namespace WebAPI.Controllers
         }
     }
 }
+
