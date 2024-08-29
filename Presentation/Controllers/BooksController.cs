@@ -23,25 +23,14 @@ namespace Presentation.Controllers
         }
         [HttpGet]
         public IActionResult GetAllBooks()
-        {
-            try
-            {
-
+        { 
                 var books = _manager.BookService.GetAllBooks(false);
                 return Ok(books);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
         }
 
         [HttpGet("{id:int}")]
         public IActionResult GetOneBook([FromRoute(Name = "id")] int id)
         {
-            try
-            {
                 throw new Exception("!!!!");
                 var book = _manager
                  .BookService
@@ -49,34 +38,18 @@ namespace Presentation.Controllers
 
                 if (book is null)
                     return NotFound(); //404
-
                 return Ok(book);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
-
         }
 
         [HttpPost]
         public IActionResult CreateOneBook([FromBody] Book book)
         {
-            try
-            {
-                if (book is null)
+             if (book is null)
                     return BadRequest(); //400
 
-                _manager.BookService.CreateOneBook(book);
+            _manager.BookService.CreateOneBook(book);
 
-
-                return StatusCode(201, book);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return StatusCode(201, book);
         }
 
 
@@ -84,35 +57,19 @@ namespace Presentation.Controllers
         public IActionResult UpdateOneBook([FromRoute(Name = "id")] int id,
             [FromBody] Book book)
         {
-            try
-            {
-
                 if (book is null)
                     return BadRequest(); //400
 
                 _manager.BookService.UpdateOneBook(id, book, true);
                 return NoContent(); //204
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
 
 
         [HttpDelete("{id:int}")]
         public IActionResult DeleteOneBook([FromRoute(Name = "id")] int id)
         {
-            try
-            {
-                _manager.BookService.DeleteOneBook(id, false);
+            _manager.BookService.DeleteOneBook(id, false);
                 return NoContent();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
 
         }
 
@@ -121,8 +78,6 @@ namespace Presentation.Controllers
         public IActionResult PartiallyUpdateOneBook([FromRoute(Name = "id")] int id,
             [FromBody] JsonPatchDocument<Book> bookPatch)
         {
-            try
-            {
                 //check entity
                 var entity = _manager
                     .BookService
@@ -134,13 +89,8 @@ namespace Presentation.Controllers
 
                 bookPatch.ApplyTo(entity);
                 _manager.BookService.UpdateOneBook(id, entity, true);
-
+                
                 return NoContent(); //204
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
     }
 }
