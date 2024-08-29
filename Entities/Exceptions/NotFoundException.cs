@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entities.Exceptions
 {
-    public abstract class NotFound : Exception
+    public abstract class NotFoundException : Exception
     {
-        public NotFound(string message) : base(message) 
+        public NotFoundException(string message) : base(message) 
         {
             
         }
