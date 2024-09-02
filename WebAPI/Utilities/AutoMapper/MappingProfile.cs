@@ -2,7 +2,7 @@
 using Entities.DataTransferObjects;
 using Entities.Models;
 
-namespace WebAPI.Utilities
+namespace WebAPI.Utilities.AutoMapper
 {
     public class MappingProfile : Profile
     {

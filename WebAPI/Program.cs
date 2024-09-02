@@ -17,7 +17,8 @@ using WebAPI.Extensions;
         config.RespectBrowserAcceptHeader = true;
         config.ReturnHttpNotAcceptable = true;
     })
-     .AddXmlDataContractSerializerFormatters()
+    .AddCustomCsvFormatter()
+    .AddXmlDataContractSerializerFormatters()
     .AddApplicationPart(typeof(Presentation.AssemblyReference).Assembly)
     .AddNewtonsoftJson();
 
