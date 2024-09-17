@@ -76,3 +76,31 @@
 2024-09-02 15:11:16.7643 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
 2024-09-02 15:11:16.7762 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
 2024-09-02 15:11:16.7931 Info Configuration initialized.
+2024-09-17 13:33:21.1242 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-09-17 13:33:21.1555 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2024-09-17 13:33:21.1555 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2024-09-17 13:33:21.1555 Info Configuration initialized.
+2024-09-17 13:44:22.2694 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-09-17 13:44:22.2927 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2024-09-17 13:44:22.3019 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2024-09-17 13:44:22.3163 Info Configuration initialized.
+2024-09-17 13:46:24.0682 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-09-17 13:46:24.1101 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2024-09-17 13:46:24.1101 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2024-09-17 13:46:24.1355 Info Configuration initialized.
+2024-09-17 14:01:43.3959 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-09-17 14:01:43.4258 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2024-09-17 14:01:43.4423 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2024-09-17 14:01:43.4592 Info Configuration initialized.
+2024-09-17 14:06:03.0442 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-09-17 14:06:03.0774 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2024-09-17 14:06:03.0774 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2024-09-17 14:06:03.1014 Info Configuration initialized.
+2024-09-17 14:08:29.2688 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-09-17 14:08:29.2992 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2024-09-17 14:08:29.2992 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2024-09-17 14:08:29.3260 Info Configuration initialized.
+2024-09-17 14:39:59.6135 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-09-17 14:39:59.6380 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2024-09-17 14:39:59.6462 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2024-09-17 14:39:59.6570 Info Configuration initialized.
