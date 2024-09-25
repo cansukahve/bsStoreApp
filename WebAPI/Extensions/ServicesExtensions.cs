@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Presentation.ActionFilters;
 using Repositories.Contracts;
 using Repositories.EFCore;
@@ -29,7 +30,19 @@ namespace WebAPI.Extensions
             services.AddSingleton<LogFilterAttribute>();
         }
 
+        public static void ConfigureCors(this IServiceCollection services)
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolisy", builder => 
+                    builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .WithExposedHeaders("X-Pagination")
+                );
+            });
+        }
 
 
-    }
-    }
+     }
+}
