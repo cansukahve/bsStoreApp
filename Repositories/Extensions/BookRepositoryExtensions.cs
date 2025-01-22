@@ -2,8 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Dynamic.Core;
+
 
 namespace Repositories.Extensions
 {
@@ -19,7 +22,7 @@ namespace Repositories.Extensions
         public static IQueryable<Book> Search(this IQueryable<Book> books,
             string searchTerm)
         {
-            if(string.IsNullOrEmpty(searchTerm))
+            if (string.IsNullOrEmpty(searchTerm))
                 return books;
 
             var lowerCaseTerm = searchTerm.Trim().ToLower(); //kara
@@ -28,5 +31,23 @@ namespace Repositories.Extensions
                 .ToLower()
                 .Contains(searchTerm));
         }
+
+        public static IQueryable<Book> Sort(this IQueryable<Book> books,
+            string orderByQueryString)
+        {
+            if (string.IsNullOrWhiteSpace(orderByQueryString))
+                return books.OrderBy(b => b.Id);
+
+            var orderQuery = OrderQueryBuilder
+                .CrateOrderQuery<Book>(orderByQueryString);
+            
+
+            if (orderQuery is null)
+                return books.OrderBy(b => b.Id);
+
+            return books.OrderBy(orderQuery);
+        }
+
+
     }
 }

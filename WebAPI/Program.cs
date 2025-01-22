@@ -73,4 +73,7 @@ using WebAPI.Extensions;
         app.MapControllers();
 
         app.Run();
-    }
+
+        app.UseDeveloperExceptionPage();
+
+}
