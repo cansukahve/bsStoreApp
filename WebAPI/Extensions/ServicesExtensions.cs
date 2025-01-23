@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entities.DataTransferObjects;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Presentation.ActionFilters;
 using Repositories.Contracts;
@@ -43,6 +44,10 @@ namespace WebAPI.Extensions
             });
         }
 
+        public static void ConfigureDataShaper(this IServiceCollection services)
+        {
+            services.AddScoped<IDataShaper<BookDto>, DataShaper<BookDto>>();
+        }
 
      }
 }
