@@ -14,7 +14,7 @@ namespace Entities.LinkModels
 
         public Link()
         {
-            
+
         }
 
         public Link(string? href, string? rel, string? method)
@@ -24,15 +24,4 @@ namespace Entities.LinkModels
             Method = method;
         }
     }
-
-    public class LinkResourceBase
-    {
-        public LinkResourceBase()
-        {
-
-        }
-        public List<Link> Links { get; set; } = new List<Link>();
-
-    }
-
 }

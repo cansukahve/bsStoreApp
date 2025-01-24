@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NLog;
 using Presentation.ActionFilters;
 using Repositories.EFCore;
+using Services;
 using Services.Contract;
 using WebAPI.Extensions;
 
@@ -45,7 +46,9 @@ using WebAPI.Extensions;
         builder.Services.ConfigureActionFilters();
         builder.Services.ConfigureCors();
         builder.Services.ConfigureDataShaper();
-   
+        builder.Services.AddCustomMediaTypes(); 
+        builder.Services.AddScoped<IBookLinks, BookLinks>();
+
 
 
     var app = builder.Build();

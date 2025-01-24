@@ -1,4 +1,6 @@
 ﻿using Entities.DataTransferObjects;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Presentation.ActionFilters;
@@ -29,6 +31,7 @@ namespace WebAPI.Extensions
         {
             services.AddScoped<ValidationFilterAttribute>();
             services.AddSingleton<LogFilterAttribute>();
+            services.AddScoped<ValidateMediaTypeAttribute>();
         }
 
         public static void ConfigureCors(this IServiceCollection services)
@@ -47,6 +50,33 @@ namespace WebAPI.Extensions
         public static void ConfigureDataShaper(this IServiceCollection services)
         {
             services.AddScoped<IDataShaper<BookDto>, DataShaper<BookDto>>();
+        }
+
+        public static void AddCustomMediaTypes(this IServiceCollection services)
+        {
+            services.Configure<MvcOptions>(config =>
+            {
+                var systemTextJsonInputFormatter = config
+                .OutputFormatters
+                .OfType<SystemTextJsonOutputFormatter>()?.FirstOrDefault();
+
+                if (systemTextJsonInputFormatter is not null)
+                {
+                    systemTextJsonInputFormatter.SupportedMediaTypes
+                    .Add("application/vnd.btkakademi.hateoas+json");
+                   
+                }
+
+                var xmlOutputFormatter = config
+                .OutputFormatters
+                .OfType<XmlDataContractSerializerOutputFormatter>()?.FirstOrDefault();
+
+                if (xmlOutputFormatter is not null)
+                {
+                    xmlOutputFormatter.SupportedMediaTypes
+                    .Add("application/vnd.btkakademi.hateoas+xml");
+                }
+            });
         }
 
      }
