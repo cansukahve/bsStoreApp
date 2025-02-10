@@ -1,6 +1,5 @@
 ﻿using Entities.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Services.Contract;
+using Services.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -22,17 +21,17 @@ namespace Services
         }
         public IEnumerable<ShapedEntity> ShapeData(IEnumerable<T> entities, string fieldsString)
         {
-            var requiredFields = GetRequeredProperties(fieldsString);
+            var requiredFields = GetRequiredProperties(fieldsString);
             return FetchData(entities, requiredFields);
         }
 
         public ShapedEntity ShapeData(T entity, string fieldsString)
         {
-           var requiredProperties = GetRequeredProperties(fieldsString);
+            var requiredProperties = GetRequiredProperties(fieldsString);
             return FetchDataForEntity(entity, requiredProperties);
         }
 
-        private IEnumerable<PropertyInfo> GetRequeredProperties(string fieldsString)
+        private IEnumerable<PropertyInfo> GetRequiredProperties(string fieldsString)
         {
             var requiredFields = new List<PropertyInfo>();
             if (!string.IsNullOrWhiteSpace(fieldsString))
@@ -40,7 +39,7 @@ namespace Services
                 var fields = fieldsString.Split(',',
                     StringSplitOptions.RemoveEmptyEntries);
 
-                foreach ( var field in fields) 
+                foreach (var field in fields)
                 {
                     var property = Properties
                         .FirstOrDefault(pi => pi.Name.Equals(field.Trim(),
@@ -48,13 +47,10 @@ namespace Services
                     if (property is null)
                         continue;
                     requiredFields.Add(property);
-
                 }
-
-
             }
             else
-            { 
+            {
                 requiredFields = Properties.ToList();
             }
 
@@ -75,7 +71,6 @@ namespace Services
             var objectProperty = entity.GetType().GetProperty("Id");
             shapedObject.Id = (int)objectProperty.GetValue(entity);
 
-
             return shapedObject;
         }
 
@@ -83,15 +78,12 @@ namespace Services
             IEnumerable<PropertyInfo> requiredProperties)
         {
             var shapedData = new List<ShapedEntity>();
-            foreach ( var entity in entities)
+            foreach (var entity in entities)
             {
                 var shapedObject = FetchDataForEntity(entity, requiredProperties);
                 shapedData.Add(shapedObject);
             }
             return shapedData;
         }
-
-
     }
-
 }

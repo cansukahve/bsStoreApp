@@ -2,8 +2,10 @@
 using Entities.LinkModels;
 using Entities.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Net.Http.Headers;
 using Services.Contract;
+using Services.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,21 +26,21 @@ namespace Services
             _linkGenerator = linkGenerator;
             _dataShaper = dataShaper;
         }
-        public LinkResponse TryGenerateLinks(IEnumerable<BookDto> booksDto, 
-            string fields, 
+        public LinkResponse TryGenerateLinks(IEnumerable<BookDto> booksDto,
+            string fields,
             HttpContext httpContext)
         {
-           var shapedBooks = ShepeData (booksDto, fields);
+            var shapedBooks = ShepeData(booksDto, fields);
             if (ShouldGenerateLinks(httpContext))
-            return ReturnLinkedBooks(booksDto, fields, httpContext, shapedBooks);
+                return ReturnLinkedBooks(booksDto, fields, httpContext, shapedBooks);
             return ReturnShapedBooks(shapedBooks);
 
 
         }
 
         private LinkResponse ReturnLinkedBooks(IEnumerable<BookDto> booksDto,
-            string fields, 
-            HttpContext httpContext, 
+            string fields,
+            HttpContext httpContext,
             List<Entity> shapedBooks)
         {
             var bookDtoList = booksDto.ToList();
@@ -59,17 +61,17 @@ namespace Services
             var links = new List<Link>()
             {
                 new Link("a1", "b1" ,"c1"),
-                new Link("a2", "b2" ,"c3")
+                new Link("a2", "b2" ,"c2")
              };
             return links;
         }
 
         private LinkResponse ReturnShapedBooks(List<Entity> shapedBooks)
         {
-           return new LinkResponse()
-           {
-               ShapedEntities = shapedBooks
-           };
+            return new LinkResponse()
+            {
+                ShapedEntities = shapedBooks
+            };
         }
 
         private bool ShouldGenerateLinks(HttpContext httpContext)

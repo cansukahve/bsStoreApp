@@ -8,6 +8,7 @@ using Repositories.Contracts;
 using Repositories.EFCore;
 using Services;
 using Services.Contract;
+using Services.Contracts;
 using System.Runtime.CompilerServices;
 
 namespace WebAPI.Extensions
