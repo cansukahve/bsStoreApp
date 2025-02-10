@@ -26,16 +26,17 @@ namespace Presentation.Controllers
         {
             _manager = manager;
         }
+        [HttpHead]
         [HttpGet]
         [ServiceFilter(typeof(ValidateMediaTypeAttribute))]
-        public async Task<IActionResult> GetAllBooksAsync([FromQuery]BookParameters bookParameters)
-        { 
-                var linkParameters = new LinkParameters()
-                {
-                    BookParameters = bookParameters,
-                    HttpContext = HttpContext
+        public async Task<IActionResult> GetAllBooksAsync([FromQuery] BookParameters bookParameters)
+        {
+            var linkParameters = new LinkParameters()
+            {
+                BookParameters = bookParameters,
+                HttpContext = HttpContext
 
-                };
+            };
 
             var result = await _manager
                 .BookService
@@ -45,40 +46,40 @@ namespace Presentation.Controllers
                 JsonSerializer.Serialize(result.metaData));
 
 
-                return result.linkResponse.HasLinks ?
-                     Ok(result.linkResponse.LinkedEntities) :
-                     Ok(result.linkResponse.ShapedEntities);
+            return result.linkResponse.HasLinks ?
+                 Ok(result.linkResponse.LinkedEntities) :
+                 Ok(result.linkResponse.ShapedEntities);
         }
 
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetOneBookAsync([FromRoute(Name = "id")] int id)
         {
-                
-                var book = await _manager
-                 .BookService
-                 .GetOneBookByIdAsync(id, false);
 
-                return Ok(book);
+            var book = await _manager
+             .BookService
+             .GetOneBookByIdAsync(id, false);
+
+            return Ok(book);
         }
 
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPost]
         public async Task<IActionResult> CreateOneBookAsync([FromBody] BookDtoForInsertion bookDto)
         {
-            
-            var book =  await _manager.BookService.CreateOneBookAsync(bookDto);
+
+            var book = await _manager.BookService.CreateOneBookAsync(bookDto);
 
             return StatusCode(201, book); // CreateAdRoute()
         }
 
-        
-        [ServiceFilter(typeof (ValidationFilterAttribute))]
+
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateOneBookAsync([FromRoute(Name = "id")] int id,
             [FromBody] BookDtoForUpdate bookDto)
         {
-                await _manager.BookService.UpdateOneBookAsync(id, bookDto, false);
-                return NoContent(); //204
+            await _manager.BookService.UpdateOneBookAsync(id, bookDto, false);
+            return NoContent(); //204
         }
 
 
@@ -86,7 +87,7 @@ namespace Presentation.Controllers
         public async Task<IActionResult> DeleteOneBookAsync([FromRoute(Name = "id")] int id)
         {
             await _manager.BookService.DeleteOneBookAsync(id, false);
-                return NoContent();
+            return NoContent();
 
         }
 
@@ -96,10 +97,10 @@ namespace Presentation.Controllers
             [FromBody] JsonPatchDocument<BookDtoForUpdate> bookPatch)
         {
 
-            if(bookPatch is null)
+            if (bookPatch is null)
                 return BadRequest(); //400
-          
-            var result = await _manager.BookService.GetOneBookForPatchAsync(id,false);
+
+            var result = await _manager.BookService.GetOneBookForPatchAsync(id, false);
 
 
             bookPatch.ApplyTo(result.bookDtoForUpdate, ModelState);
@@ -109,10 +110,19 @@ namespace Presentation.Controllers
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
 
-           await _manager.BookService.SaveChangesForPatchAsync(result.bookDtoForUpdate, result.book);
+            await _manager.BookService.SaveChangesForPatchAsync(result.bookDtoForUpdate, result.book);
 
-              return NoContent(); //204
+            return NoContent(); //204
         }
+
+
+        [HttpOptions]
+        public IActionResult GetBooksOptions()
+        {
+            Response.Headers.Add("Allow", "GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS");
+            return Ok();
+        }
+
     }
 }
 
