@@ -1,32 +1,32 @@
-﻿using Entities.DataTransferObjects;
+﻿using AutoMapper;
+using Entities.DataTransferObjects;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Presentation.ActionFilters;
 using Repositories.Contracts;
 using Repositories.EFCore;
 using Services;
 using Services.Contract;
 using Services.Contracts;
-using System.Runtime.CompilerServices;
 
-namespace WebAPI.Extensions
+namespace WebApi.Extensions
 {
     public static class ServicesExtensions
     {
         public static void ConfigureSqlContext(this IServiceCollection services,
-            IConfiguration configuration)=>  services.AddDbContext<RepositoryContext>(options =>
-                     options.UseSqlServer(configuration.GetConnectionString("sqlConnection")));
+            IConfiguration configuration) => services.AddDbContext<RepositoryContext>(options =>
+                    options.UseSqlServer(configuration.GetConnectionString("sqlConnection")));
 
         public static void ConfigureRepositoryManager(this IServiceCollection services) =>
             services.AddScoped<IRepositoryManager, RepositoryManager>();
 
         public static void ConfigureServiceManager(this IServiceCollection services) =>
-            services.AddScoped<IServiceManager,ServiceManager>();
+            services.AddScoped<IServiceManager, ServiceManager>();
 
         public static void ConfigureLoggerService(this IServiceCollection services) =>
             services.AddSingleton<ILoggerService, LoggerManager>();
+
 
         public static void ConfigureActionFilters(this IServiceCollection services)
         {
@@ -39,7 +39,7 @@ namespace WebAPI.Extensions
         {
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolisy", builder => 
+                options.AddPolicy("CorsPolicy", builder =>
                     builder.AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader()
@@ -57,15 +57,17 @@ namespace WebAPI.Extensions
         {
             services.Configure<MvcOptions>(config =>
             {
-                var systemTextJsonInputFormatter = config
+                var systemTextJsonOutputFormatter = config
                 .OutputFormatters
                 .OfType<SystemTextJsonOutputFormatter>()?.FirstOrDefault();
 
-                if (systemTextJsonInputFormatter is not null)
+                if (systemTextJsonOutputFormatter != null)
                 {
-                    systemTextJsonInputFormatter.SupportedMediaTypes
+                    systemTextJsonOutputFormatter.SupportedMediaTypes
                     .Add("application/vnd.btkakademi.hateoas+json");
-                   
+
+                    systemTextJsonOutputFormatter.SupportedMediaTypes
+                    .Add("application/vnd.btkakademi.apiroot+json");
                 }
 
                 var xmlOutputFormatter = config
@@ -76,9 +78,13 @@ namespace WebAPI.Extensions
                 {
                     xmlOutputFormatter.SupportedMediaTypes
                     .Add("application/vnd.btkakademi.hateoas+xml");
+
+                    xmlOutputFormatter.SupportedMediaTypes
+                    .Add("application/vnd.btkakademi.apiroot+xml");
                 }
             });
         }
 
-     }
+
+    }
 }
