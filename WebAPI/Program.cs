@@ -49,6 +49,7 @@ using WebAPI.Extensions;
         builder.Services.ConfigureDataShaper();
         builder.Services.AddCustomMediaTypes(); 
         builder.Services.AddScoped<IBookLinks, BookLinks>();
+        builder.Services.ConfigureVersioning();
 
 
 
