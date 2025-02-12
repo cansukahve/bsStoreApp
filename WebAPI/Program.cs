@@ -1,3 +1,4 @@
+using AspNetCoreRateLimit;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -56,6 +57,9 @@ using WebAPI.Extensions;
         builder.Services.ConfigureVersioning();
         builder.Services.ConfigureResponseCaching();
         builder.Services.ConfigureHttpCacheHeaders();
+        builder.Services.AddMemoryCache(); 
+        builder.Services.ConfigureRateLimitingOptions();
+        builder.Services.AddHttpContextAccessor();
 
 
 
@@ -77,7 +81,8 @@ using WebAPI.Extensions;
         }
 
         app.UseHttpsRedirection();
-
+        
+        app.UseIpRateLimiting();
         app.UseCors("CorsPolisy");
         app.UseResponseCaching();
         app.UseHttpCacheHeaders();
