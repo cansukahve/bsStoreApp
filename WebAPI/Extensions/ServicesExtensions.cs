@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Entities.DataTransferObjects;
+using Marvin.Cache.Headers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Versioning;
@@ -87,7 +88,6 @@ namespace WebApi.Extensions
             });
         }
 
-
         public static void ConfigureVersioning(this IServiceCollection services)
         {
             services.AddApiVersioning(opt =>
@@ -96,13 +96,28 @@ namespace WebApi.Extensions
                 opt.AssumeDefaultVersionWhenUnspecified = true;
                 opt.DefaultApiVersion = new ApiVersion(1, 0);
                 opt.ApiVersionReader = new HeaderApiVersionReader("api-version");
+
                 opt.Conventions.Controller<BooksController>()
-                .HasApiVersion(new ApiVersion(1, 0));
+                    .HasApiVersion(new ApiVersion(1, 0));
 
                 opt.Conventions.Controller<BooksV2Controller>()
-                .HasDeprecatedApiVersion(new ApiVersion(2, 0));
+                    .HasDeprecatedApiVersion(new ApiVersion(2, 0));
             });
         }
+
+        public static void ConfigureResponseCaching(this IServiceCollection services) =>
+            services.AddResponseCaching();
+
+        public static void ConfigureHttpCacheHeaders(this IServiceCollection services) =>
+            services.AddHttpCacheHeaders(expirationOpt =>
+            {
+                expirationOpt.MaxAge = 90;
+                expirationOpt.CacheLocation = CacheLocation.Public;
+            },
+            validationOpt =>
+            {
+                validationOpt.MustRevalidate = false;
+            });
 
     }
 }

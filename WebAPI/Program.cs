@@ -20,6 +20,10 @@ using WebAPI.Extensions;
     {
         config.RespectBrowserAcceptHeader = true;
         config.ReturnHttpNotAcceptable = true;
+        config.CacheProfiles.Add("5mins", new CacheProfile
+        {
+            Duration = 300
+        });
     })
     .AddXmlDataContractSerializerFormatters()
     .AddCustomCsvFormatter()
@@ -50,6 +54,8 @@ using WebAPI.Extensions;
         builder.Services.AddCustomMediaTypes(); 
         builder.Services.AddScoped<IBookLinks, BookLinks>();
         builder.Services.ConfigureVersioning();
+        builder.Services.ConfigureResponseCaching();
+        builder.Services.ConfigureHttpCacheHeaders();
 
 
 
@@ -73,8 +79,11 @@ using WebAPI.Extensions;
         app.UseHttpsRedirection();
 
         app.UseCors("CorsPolisy");
+        app.UseResponseCaching();
+        app.UseHttpCacheHeaders();
 
-        app.UseAuthorization();
+
+    app.UseAuthorization();
 
         app.MapControllers();
 
