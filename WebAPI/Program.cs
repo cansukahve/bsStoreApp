@@ -61,6 +61,10 @@ using WebAPI.Extensions;
         builder.Services.ConfigureRateLimitingOptions();
         builder.Services.AddHttpContextAccessor();
 
+      
+      //Kullanýcý Adý ve Þifre  
+        builder.Services.AddAuthentication();
+        builder.Services.ConfigureIdentity();
 
 
     var app = builder.Build();
@@ -87,8 +91,8 @@ using WebAPI.Extensions;
         app.UseResponseCaching();
         app.UseHttpCacheHeaders();
 
-
-    app.UseAuthorization();
+        app.UseAuthentication();
+        app.UseAuthorization();
 
         app.MapControllers();
 
