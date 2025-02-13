@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿using Services.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;

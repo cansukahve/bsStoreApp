@@ -32,6 +32,6 @@ namespace Services
 
         public IAuthenticationService AuthenticationService => _authenticationService.Value;
 
-        Microsoft.AspNetCore.Authentication.IAuthenticationService IServiceManager.AuthenticationService => throw new NotImplementedException();
+
     }
 }
