@@ -60,11 +60,11 @@ using WebAPI.Extensions;
         builder.Services.AddMemoryCache(); 
         builder.Services.ConfigureRateLimitingOptions();
         builder.Services.AddHttpContextAccessor();
-
       
-      //Kullanýcý Adý ve Þifre  
-        builder.Services.AddAuthentication();
+      //Kullanýcý Adý ve Þifre
         builder.Services.ConfigureIdentity();
+        builder.Services.ConfigureJwt(builder.Configuration);
+        
 
 
     var app = builder.Build();
