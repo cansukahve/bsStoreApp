@@ -63,7 +63,7 @@ using WebAPI.Extensions;
       
       //Kullanýcý Adý ve Þifre
         builder.Services.ConfigureIdentity();
-        builder.Services.ConfigureJwt(builder.Configuration);
+        builder.Services.ConfigureJWT(builder.Configuration);
         
 
 
