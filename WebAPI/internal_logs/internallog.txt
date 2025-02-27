@@ -364,3 +364,7 @@
 2025-02-27 11:50:56.2221 Info Configuration initialized.
 2025-02-27 11:50:58.3991 Info AppDomain Shutting down. LogFactory closing...
 2025-02-27 11:50:58.4058 Info LogFactory has been closed.
+2025-02-27 12:55:01.6106 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-02-27 12:55:01.6341 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-02-27 12:55:01.6454 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-02-27 12:55:01.6608 Info Configuration initialized.
