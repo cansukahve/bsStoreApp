@@ -196,7 +196,19 @@ namespace WebApi.Extensions
         {
             services.AddSwaggerGen(s =>
             {
-                s.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
+                s.SwaggerDoc("v1", new OpenApiInfo 
+                {   Title = "WebApi",
+                    Version = "v1",
+                    Description = "BTK Akademi ASP.NET Core Web API",
+                    TermsOfService = new Uri("https://www.btkakademi.gov.tr"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Cansu Kahve",
+                        Email = "52cansukahve@gmail.com"
+                    }
+
+                });
+
                 s.SwaggerDoc("v2", new OpenApiInfo { Title = "WebApi", Version = "v2" });
 
                 s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
