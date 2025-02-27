@@ -199,7 +199,34 @@ namespace WebApi.Extensions
                 s.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
                 s.SwaggerDoc("v2", new OpenApiInfo { Title = "WebApi", Version = "v2" });
 
+                s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Place to add JWT with Bearer",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                s.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                          new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Name = "Bearer"
+                        },
+                          new List<string>()
+                    }
+                });
+               
             });
+
         }
 
     }
