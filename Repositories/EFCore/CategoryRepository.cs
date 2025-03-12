@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repositories.EFCore
 {
-    class CategoryRepository : RepositoryBase<Category>, ICategoryRepository
+    public class CategoryRepository : RepositoryBase<Category>, ICategoryRepository
     {
         public CategoryRepository(RepositoryContext context) :
             base(context)
@@ -17,19 +17,25 @@ namespace Repositories.EFCore
 
         }
 
-        public void CreateOneCategory(Category category) =>
-            Create(category);
+        public void CreateOneCategory(Category category) => Create(category);
 
+        public void DeleteOneCategory(Category category)
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task<IEnumerable<Category>> GetAllCategoriesAsync(bool trackChanges) =>
              await FindAll(trackChanges)
                 .OrderBy(c => c.CategoryName)
                 .ToListAsync();
-        
 
         public async Task<Category> GetOneCategoryByIdAsync(int id, bool trackChanges) =>
             await FindByCondition(c => c.CategoryId.Equals(id), trackChanges)
                 .SingleOrDefaultAsync();
-        
+
+        public void UpdateOneCategory(Category category)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
