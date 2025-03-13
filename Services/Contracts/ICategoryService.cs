@@ -1,11 +1,10 @@
 ﻿using Entities.Models;
 
-namespace Services.Contract
+namespace Services.Contracts
 {
     public interface ICategoryService
     {
-        Task<IEnumerable<Category>> GelAllCategoriesAsync(bool trackChanges);
+        Task<IEnumerable<Category>> GetAllCategoriesAsync(bool trackChanges);
         Task<Category> GetOneCategoryByIdAsync(int id, bool trackChanges);
     }
-
 }

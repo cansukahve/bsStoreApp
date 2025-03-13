@@ -25,7 +25,7 @@ namespace Presentation.Controllers
         {
             return Ok(await _services
                 .CategoryService
-                .GelAllCategoriesAsync(false));
+                .GetAllCategoriesAsync(false));
         }
 
         [HttpGet("{id:int}")]

@@ -2,6 +2,7 @@
 using Entities.Models;
 using Repositories.Contracts;
 using Services.Contract;
+using Services.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,17 @@ namespace Services
     public class CategoryManager : ICategoryService
     {
         private readonly IRepositoryManager _manager;
-
         public CategoryManager(IRepositoryManager manager)
         {
             _manager = manager;
         }
-        public async Task<IEnumerable<Category>> GelAllCategoriesAsync(bool trackChanges)
+
+        public Task<IEnumerable<Category>> GelAllCategoriesAsync(bool trackChanges)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<Category>> GetAllCategoriesAsync(bool trackChanges)
         {
             return await _manager
                 .Category
@@ -28,7 +34,7 @@ namespace Services
 
         public async Task<Category> GetOneCategoryByIdAsync(int id, bool trackChanges)
         {
-           
+
             var category = await _manager
                 .Category
                 .GetOneCategoryByIdAsync(id, trackChanges);

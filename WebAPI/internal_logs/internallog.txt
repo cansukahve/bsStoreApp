@@ -444,3 +444,59 @@
 2025-03-12 12:17:04.4124 Info Configuration initialized.
 2025-03-12 12:17:06.5121 Info AppDomain Shutting down. LogFactory closing...
 2025-03-12 12:17:06.5208 Info LogFactory has been closed.
+2025-03-12 12:40:28.2222 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-12 12:40:28.2518 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-12 12:40:28.2672 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-12 12:40:28.2672 Info Configuration initialized.
+2025-03-12 13:04:52.7879 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-12 13:04:52.8317 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-12 13:04:52.8463 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-12 13:04:52.8606 Info Configuration initialized.
+2025-03-12 13:06:39.3807 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-12 13:06:39.4163 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-12 13:06:39.4253 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-12 13:06:39.4352 Info Configuration initialized.
+2025-03-13 14:06:31.9810 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-13 14:06:32.0225 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-13 14:06:32.0357 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-13 14:06:32.0506 Info Configuration initialized.
+2025-03-13 14:13:16.3361 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-13 14:13:16.3555 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-13 14:13:16.3648 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-13 14:13:16.3731 Info Configuration initialized.
+2025-03-13 14:15:01.0535 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-13 14:15:01.0731 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-13 14:15:01.0731 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-13 14:15:01.0904 Info Configuration initialized.
+2025-03-13 14:18:16.2917 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-13 14:18:16.3143 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-13 14:18:16.3143 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-13 14:18:16.3354 Info Configuration initialized.
+2025-03-13 14:21:25.8818 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-13 14:21:25.9017 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-13 14:21:25.9097 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-13 14:21:25.9097 Info Configuration initialized.
+2025-03-13 14:26:53.2042 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-13 14:26:53.2242 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-13 14:26:53.2242 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-13 14:26:53.2412 Info Configuration initialized.
+2025-03-13 14:28:58.8402 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-13 14:28:58.8605 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-13 14:28:58.8605 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-13 14:28:58.8828 Info Configuration initialized.
+2025-03-13 14:31:09.2546 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-13 14:31:09.2730 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-13 14:31:09.2840 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-13 14:31:09.2840 Info Configuration initialized.
+2025-03-13 14:31:54.7936 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-13 14:31:54.8286 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-13 14:31:54.8412 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-13 14:31:54.8574 Info Configuration initialized.
+2025-03-13 14:35:18.9137 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-13 14:35:18.9345 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-13 14:35:18.9429 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-13 14:35:18.9429 Info Configuration initialized.
+2025-03-13 14:47:16.4054 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2025-03-13 14:47:16.4403 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.3.2683. Product version: 5.3.3+341c753ad4dce4dd476dcf0bc3ff2cfd9db76493. GlobalAssemblyCache: False
+2025-03-13 14:47:16.4512 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\Lenovo\Desktop\courses\bsStoreApp\WebAPI\nlog.config
+2025-03-13 14:47:16.4512 Info Configuration initialized.

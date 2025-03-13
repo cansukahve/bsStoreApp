@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Presentation.ActionFilters;
+using Repositories.Contracts;
 using Repositories.EFCore;
 using Services;
 using Services.Contract;
+using Services.Contracts;
 using WebApi.Extensions;
 using WebAPI.Extensions;
 
@@ -29,9 +31,12 @@ using WebAPI.Extensions;
     .AddXmlDataContractSerializerFormatters()
     .AddCustomCsvFormatter()
     .AddApplicationPart(typeof(Presentation.AssemblyReference).Assembly);
-    //.AddNewtonsoftJson();
+    //.AddNewtonsoftJson(opt =>
+    //opt.SerializerSettings.ReferenceLoopHandling =
+   // Newtonsoft.Json.ReferenceLoopHandling.Ignore
+//);
 
-    
+
 
     builder.Services.Configure<ApiBehaviorOptions>(options =>
     {
@@ -64,7 +69,14 @@ using WebAPI.Extensions;
       //Kullanýcý Adý ve Þifre
         builder.Services.ConfigureIdentity();
         builder.Services.ConfigureJWT(builder.Configuration);
-        
+       
+        builder.Services.RegisterRepositories();
+        builder.Services.RegisterServices();
+
+
+
+
+
 
 
     var app = builder.Build();
@@ -100,9 +112,10 @@ using WebAPI.Extensions;
         app.UseAuthorization();
 
         app.MapControllers();
+        app.UseDeveloperExceptionPage();
 
         app.Run();
 
-        app.UseDeveloperExceptionPage();
+        
 
 }
