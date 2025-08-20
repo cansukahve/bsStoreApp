@@ -1,9 +1,56 @@
-# StoreApp
+# 🛒 bsStoreApp
 
-Bu proje, bir mağaza uygulaması geliştirmek amacıyla C# kullanılarak oluşturulmuştur. Proje, Entity Framework, ASP.NET Core Web API ve katmanlı mimari kullanarak mağaza verilerini yönetmeyi amaçlar. Kullanıcılar, ürünlerin yönetimini, sipariş işlemlerini ve müşteri verilerini kolayca gerçekleştirebilirler.
+Bu repo, C# ile geliştirilmiş bir **bsStoreApp** uygulamasını
+içermektedir.
 
-## Özellikler
+## 📌 Genel Bakış
 
-- **Entity Framework**: Veritabanı işlemleri için Entity Framework kullanımı.
-- **ASP.NET Core Web API**: RESTful API ile veri işlemleri.
-- **Katmanlı Mimari**: Proje, Presentation, Services, Repositories ve Entities gibi katmanlara ayrılmıştır.
+Bu proje, temel bir mağaza uygulamasını simüle etmek amacıyla
+geliştirilmiştir.\
+Ürün ekleme, listeleme ve satış mantığını içerecek şekilde
+tasarlanmıştır.\
+
+
+## 🛠️ Teknolojiler
+
+-   C# / .NET
+-   Entity Framework, ASP.NET
+    Core
+
+## 📂 Proje Yapısı
+
+-   `Services/` → İş mantığı katmanı\
+-   `DataAccess/` → Veritabanı erişim katmanı\
+-   `Models/` → Veri modelleri (Ürün, Kullanıcı vb.)\
+-   `Presentation/` veya `WebAPI/` → Kullanıcı arayüzü ya da API
+
+
+## 🚀 Çalıştırma
+
+1.  Bu projeyi klonlayın:
+
+    ``` bash
+    git clone https://github.com/cansukahve/bsStoreApp.git
+    ```
+
+2.  Visual Studio veya VS Code ile `.sln` dosyasını açın.\
+
+3.  Gerekli NuGet paketlerini geri yükleyin.\
+
+4.  Uygulamayı çalıştırmak için başlangıç projesini seçip `F5` ya da:
+
+    ``` bash
+    dotnet run
+    ```
+
+## 📖 Kullanım
+
+-   Ürün ekleme\
+-   Ürünleri listeleme\
+-   Sepete ekleme ve satın alma işlemleri
+
+
+
+------------------------------------------------------------------------
+
+👩‍💻 Hazırlayan: **Cansu Kahve**
