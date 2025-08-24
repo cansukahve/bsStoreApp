@@ -6,7 +6,7 @@ içermektedir.
 ## 📌 Genel Bakış
 
 Bu proje, temel bir mağaza uygulamasını simüle etmek amacıyla
-geliştirilmiştir.\
+geliştirilmiştir.
 Ürün ekleme, listeleme ve satış mantığını içerecek şekilde
 tasarlanmıştır.\
 
